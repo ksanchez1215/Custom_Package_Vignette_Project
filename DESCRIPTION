@@ -1,0 +1,13 @@
+Package: PCA
+Type: Package
+Title: Principal Component Analysis Package
+Version: 1.0.0
+Author: Camila Cortina, Kevin Sanchez, Kelton Sheridan
+Maintainer: Camila Cortina <ccortina@utexas.edu>, Kevin Sanchez <kevin.sanchez@utexas.edu>,
+Kelton Sheridan <keltonsheridan@utexas.edu>
+Description: The functions in this package will allow you to visualize principal component
+analysis (PCA) in either tabular form or graphically. Additionally, you will be able to 
+determine whether the differences between these components are statistically significant.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true

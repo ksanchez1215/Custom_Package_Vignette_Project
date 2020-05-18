@@ -30,13 +30,13 @@ pca <- function(x, retx = TRUE, center = TRUE, scale. = FALSE, tol = NULL, ...)
 pca_tab <- function(x) {
   summary(pca(x))}
 
-library(ggplot2)
+
 pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype){
   temp<- pca(d)
-  plot<- autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)
+  plot<- ggplot2::autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)
   return(plot)
 }
 
-pca_plot(network_data[,10:130], network_data, col = 'History3', frame = TRUE, frametype = 'norm')
+
 
 

@@ -44,7 +44,7 @@ pca_tab <- function(x) {
 
 #' @title network_data
 #' @description dataset including pollinator species found at 50 transect locations
-f <- "2012_network_ord.csv"
+f <- "https://raw.githubusercontent.com/ksanchez1215/Custom_Package_Vignette_Project/master/2012_network_ord.csv"
 network_data <- readr::read_csv(f, col_names = TRUE)
 save(network_data, file = "network_data.RData")
 
@@ -67,6 +67,6 @@ pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype = 'norm'){
 }
 
 
-
+pca_plot(d = network_data[,10:130], dataframe = network_data, groupby = 'History3', frame = TRUE, frametype = 'norm')
 
 

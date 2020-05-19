@@ -41,7 +41,7 @@ pca <- function(x, retx = TRUE, center = TRUE, scale. = FALSE, tol = NULL, ...)
 pca_tab <- function(x) {
   summary(pca(x))}
 
-pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype){
+pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype = 'norm'){
   temp<- pca(d)
   plot<- ggplot2::autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)
   return(plot)

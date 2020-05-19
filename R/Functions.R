@@ -41,6 +41,18 @@ pca <- function(x, retx = TRUE, center = TRUE, scale. = FALSE, tol = NULL, ...)
 pca_tab <- function(x) {
   summary(pca(x))}
 
+#' @title pca_plot
+#' @description Plots the results of a principal components analysis is 2 dimensions 
+#' @param d a numeric or complex data frame that provides the data for the analysis
+#' @param dataframe the entire dataframe that d came from, that can have variables as factors to group the results
+#' @param groupby the variable from dataframe that you want to color your plot by
+#' @param frame a logical value indicating whether your groups should have a geometric shape drawn around them
+#' @param frame.type the shape of the frame, can be 'norm', 't', or 'euclid'. Default is 'norm' which creates an ellipse around the groups
+#' @keywords PCA plot graph 
+#' @export
+#' @examples
+#' pca_plot(network_data[,10:130], network_data, groupby = 'History3', frame = TRUE, frame.type = 'norm)
+#' 
 pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype = 'norm'){
   temp<- pca(d)
   plot<- ggplot2::autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)

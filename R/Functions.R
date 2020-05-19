@@ -46,3 +46,8 @@ pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype = 'norm'){
   plot<- ggplot2::autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)
   return(plot)
 }
+
+f <- "2012_network_ord.csv"
+network_data <- readr::read_csv(f, col_names = TRUE)
+save(network_data, file = "network_data.RData")
+

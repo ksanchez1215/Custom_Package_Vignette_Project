@@ -41,6 +41,13 @@ pca <- function(x, retx = TRUE, center = TRUE, scale. = FALSE, tol = NULL, ...)
 pca_tab <- function(x) {
   summary(pca(x))}
 
+
+#' @title network_data
+#' @description dataset including pollinator species found at 50 transect locations
+f <- "2012_network_ord.csv"
+network_data <- readr::read_csv(f, col_names = TRUE)
+save(network_data, file = "network_data.RData")
+
 #' @title pca_plot
 #' @description Plots the results of a principal components analysis is 2 dimensions 
 #' @param d a numeric or complex data frame that provides the data for the analysis
@@ -51,15 +58,15 @@ pca_tab <- function(x) {
 #' @keywords PCA plot graph 
 #' @export
 #' @examples
-#' pca_plot(network_data[,10:130], network_data, groupby = 'History3', frame = TRUE, frame.type = 'norm)
-#' 
+#' pca_plot(d = network_data[,10:130], dataframe = network_data, groupby = 'History3', frame = TRUE, frametype = 'norm')
+
 pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype = 'norm'){
   temp<- pca(d)
   plot<- ggplot2::autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)
   return(plot)
 }
 
-f <- "2012_network_ord.csv"
-network_data <- readr::read_csv(f, col_names = TRUE)
-save(network_data, file = "network_data.RData")
+
+
+
 

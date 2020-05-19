@@ -15,7 +15,10 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
+library(ggplot2)
+library(ggfortify)
 library(PCA)
+
 #' @title pca_tab
 #' @description Performs principal components analysis on a data matrix and returns the result in tabular form
 #' @param x a numeric or complex data frame that provides the data for the analysis
@@ -56,6 +59,9 @@ pca_tab <- function(x, retx = TRUE, center = TRUE, scale. = FALSE, tol = NULL, .
   r
 }
 
+pca_tab(network_data[,10:130], scale. = TRUE)
+summary(pca_tab(network_data[,10:130], scale. = TRUE))
+
 #' @title pca_plot
 #' @description Plots the results of a principal components analysis is 2 dimensions
 #' @param d a numeric or complex data frame that provides the data for the analysis
@@ -69,9 +75,10 @@ pca_tab <- function(x, retx = TRUE, center = TRUE, scale. = FALSE, tol = NULL, .
 #' pca_plot(d = network_data[,10:130], dataframe = network_data, groupby = 'History3', frame = TRUE, frametype = 'norm')
 
 pca_plot<- function(d, dataframe, groupby, frame = TRUE, frametype = 'norm'){
-  temp<- pca_temp(d)
+  temp<- pca_tab(d)
   plot<- ggplot2::autoplot(temp, data = dataframe, colour = groupby, frame = frame, frame.type = frametype)
   return(plot)
 }
 
+pca_plot(d = network_data[,10:130], dataframe = network_data, groupby = 'History3', frame = TRUE, frametype = 'norm')
 ```

@@ -1,5 +1,5 @@
 #' @title pca_tab
-#' @description Performs principal components analysis on a data matrix and returns the result in tabular form
+#' @description Performs principal components analysis on a data matrix and returns the result in tabular form. Code adapted from prcomp() on {stats} package
 #' @param x a numeric or complex data frame that provides the data for the analysis
 #' @param retx a logical value indicating whether rotated variables should be returned
 #' @param center a logical value indicating if variables should be shifted to be zero centered

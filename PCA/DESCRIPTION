@@ -4,7 +4,7 @@ Title: Principal Component Analysis Package
 Version: 1.0.0
 Author: Camila Cortina, Kevin Sanchez, Kelton Sheridan
 Maintainer: Camila Cortina <ccortina@utexas.edu>, Kevin Sanchez <kevin.sanchez@utexas.edu>, Kelton Sheridan <keltonsheridan@utexas.edu>
-Description: The functions in this package will allow you to visualize principal component analysis (PCA) in either tabular form or graphically. Additionally, you will be able to determine whether the differences between these components are statistically significant.
+Description: The functions in this package will allow you to visualize principal component analysis (PCA) in either tabular form or graphically.
 Depends: R (>= 3.5.2)
 License: GPL-3
 Encoding: UTF-8
@@ -13,5 +13,5 @@ Imports: ggplot2
 RoxygenNote: 7.1.0
 NeedsCompilation: no
 Packaged: 2020-05-19 00:24:24 UTC; kelton
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, ggfortify, ggplot2
 VignetteBuilder: knitr
